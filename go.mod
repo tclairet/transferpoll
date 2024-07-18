@@ -1,4 +1,4 @@
-module tranferpoll
+module transferpoll
 
 go 1.22.0
 
