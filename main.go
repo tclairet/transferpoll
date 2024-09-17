@@ -19,10 +19,11 @@ func main() {
 		log.Fatalf("invalid eth client: %s", err)
 	}
 
-	store, err := newSqlite("./transfers.db")
+	store, err := bigTable() //newSqlite("./transfers.db")
 	if err != nil {
 		log.Fatalf("cannot open db: %s", err)
 	}
+	defer store.Close()
 
 	var block uint64
 	if len(os.Args) < 2 {
